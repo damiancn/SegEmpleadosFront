@@ -14,6 +14,7 @@ export abstract class PrincipalRepositoryService<T> {
   gethttpClient() { return this.httpClient; }
 
   get(): Observable<ServiceResponse<T[]>> {
+    console.log("🚀 ~ PrincipalRepositoryService<T> ~ get ~ gethttpClient:", this.gethttpClient())
     return this.gethttpClient().get<ServiceResponse<T[]>>(this.url);
   }
 

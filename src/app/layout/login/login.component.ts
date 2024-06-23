@@ -7,6 +7,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { Subscription } from 'rxjs';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { UsersService } from 'src/app/service/users/users.service';
 
 @Component({
   selector: 'app-login',
@@ -26,11 +27,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class LoginComponent implements OnInit, OnDestroy {
   form: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UsersService,
+  ) {
   }
   subscription = new Subscription;
 
   ngOnInit(): void {
+    this.subscription.add(
+      this.userService.get().subscribe({
+        next:(e) => {
+          console.log("🚀 ~ LoginComponent ~ this.userService.get ~ e:", e)          
+        }
+      })
+    )
     this.createFormLogin();
   }
 
