@@ -1,0 +1,139 @@
+.sidebar-button-container {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 1000;
+    transition: left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sidebar-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--orangeColor);
+    border-color: transparent !important;
+    color: white;
+}
+
+.sidebar-button:active {
+    background-color: var(--yellowColor);
+}
+
+.shifted {
+    left: 270px;
+}
+
+.example-container {
+    overflow: auto;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: black !important;
+}
+
+.sideDrawer {
+    background-color: var(--blueLightColor);
+    width: 270px;
+    border-radius: 0 15px 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.drawer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.nabBtns {
+    width: 100%;
+}
+
+.btnList {
+    list-style-type: none;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btnListado,
+.logout {
+    height: 50px !important;
+    color: black;
+    transition: all ease-in-out .3s;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    font-size: 15px;
+    padding: 0 15px;
+    text-decoration: none !important;
+}
+
+.logout-container {
+    transition: all ease .3s;
+    display: block;
+    margin-top: auto;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    border: none;
+    outline: none;
+    left: 0;
+    background-color: transparent !important;
+}
+
+.logout {
+    width: 100%;
+    font-size: 12px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.215) !important;
+
+    // background-color: #b22222;
+}
+
+.cerrar {
+    margin: 0 !important;
+}
+
+
+.btnListado {
+    display: flex;
+    justify-content: left;
+}
+
+.btnListado:hover {
+    background-color: rgba(255, 255, 255, .15) !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.079);
+}
+
+.btnListado.active {
+    border-radius: 5px !important;
+    overflow: hidden;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.116);
+    margin: 5px 0;
+
+}
+
+.content {
+    display: flex;
+    // flex-direction: column;
+}
+
+#outler {
+    flex: 1;
+    overflow: hidden;
+}

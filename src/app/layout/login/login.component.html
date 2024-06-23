@@ -1,0 +1,38 @@
+<div class="pplBack">
+    <div class="wdt50 hdt100 flex alignC jcc">
+        <div class="login">
+            <div class="containerLogin">
+                <img class="wdt25" src="/assets/resources/login/laureate.png" alt="">
+                <div class="containerLogin alignC jcc columnContent">
+                    <h1>Seguimiento a Empleados</h1>
+                    <h2>Bienvenido</h2>
+                    <br>
+                    <br>
+                    <button class="btn btnOrange" (click)="showCard()">
+                        Iniciar Sesión
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="imgF alignC wdt50 hdt100 jcc">
+        <img id="fondo" class="wdt90 hdt100" id="fondo" src="/assets/resources/login/fondo-login.png">
+        <div id="card" class="card wdt50 hdt50">
+            <div class="cardContainer">
+                <form [formGroup]="form" class="columnContent alignC jcc hdt100" id="formaLogin" (submit)="login()">
+                    <mat-form-field>
+                        <mat-label>Usuario</mat-label>
+                        <input matInput formControlName="username">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput formControlName="password">
+                    </mat-form-field>
+                    <br>
+                    <button type="submit" class="btn btnYellow">Ingresar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
