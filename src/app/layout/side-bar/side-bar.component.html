@@ -8,25 +8,15 @@
         <div class="drawer">
             <div class="nabBtns">
                 <ul class="btnList">
-                    <li>
-                        <a [routerLink]="['/pages']" routerLinkActive="active" class="btnListado">
-                            <span class="material-symbols-outlined">
-                                home
-                            </span>&nbsp;
-                            Inicio
+                    <li *ngFor="let page of pages">
+
+                        <a [routerLink]="page.code" routerLinkActive="active " class="btnListado"
+                            (click)="irA(page.code)">
+                            <mat-icon>{{page.icon}}</mat-icon>
+                            &nbsp;
+                            {{page.name}}
                         </a>
                     </li>
-                    <!-- <li *ngFor="let menu of menus">
-
-                        <a [routerLink]="menu.clave" routerLinkActive="active " class="btnListado"
-                            (click)="irA(menu.clave)">
-                            <span class="material-symbols-outlined">
-                                {{menu.icono}}
-                            </span>&nbsp;
-                            {{menu.nombre}}
-                        </a>
-                    </li> -->
-
                     <li class="logout-container">
                         <button (click)="cerrarSesion()" class="logout">
                             <mat-icon>power_settings_new</mat-icon>

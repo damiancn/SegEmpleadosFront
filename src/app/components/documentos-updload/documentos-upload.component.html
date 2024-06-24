@@ -1,0 +1,15 @@
+<div class="jcc col">
+    <div class="fotoTra" (click)="evidenceUpload()">
+        <img *ngIf="fileUploaded == null" src="assets/resources/picker/imagePicker.png" class="foto" alt="">
+        <img [id]="img" *ngIf="fileUploaded != null" [src]="fileUploaded" class="default" alt="">
+
+    </div>
+    <div class="rowCont jcc">
+        <button type="button" *ngIf="fileUploaded != null" class="btn btnOrange" (click)="deleteOpen(idDoc)">
+            <mat-icon>delete</mat-icon>
+        </button>
+    </div>
+</div>
+<input (change)="uploadFile()" [id]="idDoc" hidden #inputEv accept="image/*" type="file">
+
+<input [id]="inpAux" type="text" hidden>

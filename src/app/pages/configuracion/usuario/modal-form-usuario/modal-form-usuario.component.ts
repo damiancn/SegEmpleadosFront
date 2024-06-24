@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -13,6 +14,7 @@ import { Subscription } from 'rxjs';
     CommonModule,
     ReactiveFormsModule,
     MatDialogModule,
+    MatSnackBarModule,
   ],
 })
 export class ModalFormUsuarioComponent implements OnInit, OnDestroy {

@@ -1,4 +1,10 @@
-export class Credential {
+import { Page } from "../security/page";
+
+export interface Credential {
+    userId: string;
+    userName: string;
     token: string;
-    userId: number;
+    rolId: string;
+    rol: string;
+    pages: Page[];
 }

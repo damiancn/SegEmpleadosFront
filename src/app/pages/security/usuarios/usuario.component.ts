@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Subscription } from 'rxjs';
@@ -13,6 +14,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./usuario.component.scss'],
   standalone: true,
   imports: [
+    MatSnackBarModule,
     CommonModule,
     ReactiveFormsModule,
     MatTableModule,

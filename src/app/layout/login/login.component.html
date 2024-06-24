@@ -8,7 +8,7 @@
                     <h2>Bienvenido</h2>
                     <br>
                     <br>
-                    <button class="btn btnOrange" (click)="showCard()">
+                    <button class="btn btnOrange" type="button" (click)="showCard()">
                         Iniciar Sesión
                     </button>
                 </div>
@@ -23,14 +23,14 @@
                 <form [formGroup]="form" class="columnContent alignC jcc hdt100" id="formaLogin" (submit)="login()">
                     <mat-form-field>
                         <mat-label>Usuario</mat-label>
-                        <input matInput formControlName="username">
+                        <input matInput formControlName="user">
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>Contraseña</mat-label>
-                        <input matInput formControlName="password">
+                        <input type="password" matInput formControlName="password">
                     </mat-form-field>
                     <br>
-                    <button type="submit" class="btn btnYellow">Ingresar</button>
+                    <button type="submit" #formaLogin class="btn btnYellow">Ingresar</button>
                 </form>
             </div>
         </div>

@@ -1,1 +1,57 @@
-<p>modal-form-empleado works!</p>
+<div class="header">
+    <h1 *ngIf="!data" class="m0">Nuevo Beneficiario</h1>
+    <h1 *ngIf="data" class="m0">Detalle Beneficiario {{data.name}}</h1>
+    <button class="btnClose" mat-icon-button matDialogClose>
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<form class="form flex" [formGroup]="form" (submit)="save()">
+    <div class="modalCont">
+        <div class="rowCont jcc">
+            <app-documentos-upload [idDoc]="'fotography'" (tipoArchivo)="recibirBase($event)"></app-documentos-upload>
+        </div>
+        <div class="rowCont">
+            <mat-form-field class="inpCont wdt33">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field class="inpCont wdt33">
+                <mat-label>Primer Apellido</mat-label>
+                <input matInput type="text" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field class="inpCont wdt33">
+                <mat-label>Segundo Apellido</mat-label>
+                <input matInput type="text" formControlName="seconLastName">
+            </mat-form-field>
+
+            <div class="inpCont wdt50">
+                <label for="" class="lblUp">Fecha de acceso:</label>
+                <input type="datetime-local" class="input" [ngClass]="{ 'inpError': validate('dateAcces')}"
+                    formControlName="dateAcces">
+            </div>
+            <div class="inpCont wdt50">
+                <label for="" class="lblUp">Fecha de Nacimiento:</label>
+                <input type="datetime-local" class="input" [ngClass]="{ 'inpError': validate('birthDate')}"
+                    formControlName="birthDate">
+            </div>
+
+            <mat-form-field class="inpCont wdt50">
+                <mat-label>Posición</mat-label>
+                <input type="text" matInput formControlName="position">
+            </mat-form-field>
+            <mat-form-field class="inpCont wdt50">
+                <mat-label>Salario</mat-label>
+                <input type="number" matInput formControlName="salary">
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="buttonPanel">
+        <button type="button" class="btnCanc btnYellow" matDialogClose>
+            Cancelar
+        </button>
+        <button class="btn btnOrange" type="submit">
+            Guardar
+        </button>
+    </div>
+</form>

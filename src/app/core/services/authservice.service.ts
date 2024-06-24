@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { Credential } from 'src/app/model/credential';
+import { Credential } from 'src/app/model/common/credential';
 // import { Credencial } from 'src/app/data/models/seguridad/credencial';
 
 @Injectable({
@@ -57,8 +57,12 @@ export class AuthService {
     const json = window.localStorage.getItem(this.crendencial);
     if (!json) {
       return {
+        userId: '',
+        userName: '',
         token: '',
-        userId: 0
+        rolId: '',
+        rol: '',
+        pages: [],
       };
     }
     return JSON.parse(json);

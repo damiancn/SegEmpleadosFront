@@ -1,5 +1,6 @@
 export class ServiceResponse<T> {
-  data: T;
+  dto: T;
   message: string;
-  uccess: boolean;
+  mesageError: string;
+  ok: boolean;
 }

@@ -1,1 +1,49 @@
-<p>modal-form-beneficiario works!</p>
+<div class="header">
+    <h1 *ngIf="!data" class="m0">Nuevo Beneficiario</h1>
+    <h1 *ngIf="data" class="m0">Detalle Beneficiario {{data.name}}</h1>
+    <button class="btnClose" mat-icon-button matDialogClose>
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<form class="form flex" action="" [formGroup]="form" (submit)="save()">
+    <div class="modalCont">
+        <div class="rowCont">
+            <mat-form-field class="inpCont wdt33">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+
+            <mat-form-field class="inpCont wdt33">
+                <mat-label>Primer Apellido</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field class="inpCont wdt33">
+                <mat-label>Segundo Apellido</mat-label>
+                <input matInput formControlName="seconLastName">
+            </mat-form-field>
+            <mat-form-field class="inpCont wdt50">
+                <mat-label>Relación con Empleado</mat-label>
+                <input matInput formControlName="relationship">
+            </mat-form-field>
+            <mat-form-field class="inpCont wdt50">
+                <mat-label>Nombre del Empleado</mat-label>
+                <mat-select #employeeSelect formControlName="employeeName"
+                    (valueChange)="employeeSelected(employeeSelect.value)">
+                    <mat-option *ngFor="let elm of employee" [value]="elm.fullName">
+                        {{elm.fullName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="buttonPanel">
+        <button type="button" class="btnCanc btnYellow" matDialogClose>
+            Cancelar
+        </button>
+        <button class="btn btnOrange" type="submit">
+            Guardar
+        </button>
+    </div>
+</form>
